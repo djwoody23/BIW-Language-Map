@@ -1,0 +1,207 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-height: 999999px;
+}
+
+html, input
+{
+    font-size: 16px;
+    line-height: 1.125;
+}
+
+html, body
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+div
+{
+    position: relative;
+}
+
+
+.fill
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.center
+{
+    /* Mandatory 
+    width: 50%;
+    height: 50%;*/
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    margin: auto;
+}
+
+.img-fill
+{
+    width: 100%;
+    height: auto;
+    max-width: 99999999%;
+    max-height: 99999999%;
+    display: block;
+}
+
+.img-fill-h
+{
+    width: auto;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    max-width: 99999999%;
+    max-height: 99999999%;
+    display: block;
+}
+
+.only-shrink
+{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+.background
+{
+    background-image: url(../images/painting.jpg) !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-color: #000 !important;
+}
+
+.outer
+{
+    position: absolute;
+    top: 1%;
+    bottom: 1%;
+    left: 1%;
+    right: 1%;
+    margin: auto;
+
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.inner
+{
+    position: absolute;
+    top: 1%;
+    bottom: 1%;
+    left: 1%;
+    right: 1%;
+
+}
+
+.main
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    margin: auto;
+
+    overflow: hidden;
+}
+
+
+.button-video
+{
+    position: absolute;
+    height: 3.4%;
+    width: 9.2%;
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+
+.button-video::after
+{
+    content: "";
+    position: absolute;
+    top: 1%;
+    bottom: 1%;
+    left: 1%;
+    right: 1%;
+
+    display: block;
+
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.button-video:active::after, .button-video:hover::after
+{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#badimaya
+{
+    top: 71%;
+    left: 44%;
+    background-image: url(../images/badimaya.png);
+}
+
+#malgana
+{
+    top: 45%;
+    left: 14%;
+    background-image: url(../images/malgana.png);
+}
+
+#ngarlawangga
+{
+    top: 12.5%;
+    left: 63%;
+    background-image: url(../images/ngarlawangga.png);
+    width: 9.8%;
+}
+
+#nhanda
+{
+    top: 52%;
+    left: 12.5%;
+    background-image: url(../images/nhanda.png);
+}
+
+#wajarri
+{
+    top: 44%;
+    left: 34%;
+    background-image: url(../images/wajarri.png);
+}
+
+#warriyangka
+{
+    top: 13.5%;
+    left: 33%;
+    background-image: url(../images/warriyangka.png);
+}
+
+#yingkarta
+{
+    top: 20.5%;
+    left: 22%;
+    background-image: url(../images/yingkarta.png);
+}
