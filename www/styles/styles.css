@@ -6,6 +6,10 @@
     max-height: 999999px;
 }
 
+::selection {
+    background: none;
+}
+
 html, input
 {
     font-size: 16px;
@@ -15,10 +19,7 @@ html, input
 html, body
 {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    top: 0; bottom: 0; left: 0; right: 0;
     overflow: hidden;
 }
 
@@ -31,10 +32,13 @@ div
 .fill
 {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    top: 0; bottom: 0; left: 0; right: 0;
+}
+
+.fill-1percent
+{
+    position: absolute;
+    top: 1%; bottom: 1%; left: 1%; right: 1%;
 }
 
 .center
@@ -44,38 +48,34 @@ div
     height: 50%;*/
 
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    top: 0; bottom: 0; left: 0; right: 0;
     
+    margin: auto;
+}
+
+.center-margin
+{
     margin: auto;
 }
 
 .img-fill
 {
-    width: 100%;
-    height: auto;
-    max-width: 99999999%;
-    max-height: 99999999%;
+    width: 100%; height: auto;
+    max-width: 99999999%; max-height: 99999999%;
     display: block;
 }
 
 .img-fill-h
 {
-    width: auto;
-    height: 100%;
-    min-width: 0;
-    min-height: 0;
-    max-width: 99999999%;
-    max-height: 99999999%;
+    width: auto; height: 100%;
+    min-width: 0; min-height: 0;
+    max-width: 99999999%; max-height: 99999999%;
     display: block;
 }
 
 .only-shrink
 {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 100%; max-height: 100%;
 }
 
 
@@ -93,10 +93,8 @@ div
 .outer
 {
     position: absolute;
-    top: 1%;
-    bottom: 1%;
-    left: 1%;
-    right: 1%;
+    top: 1%; bottom: 1%; left: 1%; right: 1%;
+
     margin: auto;
 
     background-color: rgba(255, 255, 255, 0.5);
@@ -105,20 +103,13 @@ div
 .inner
 {
     position: absolute;
-    top: 1%;
-    bottom: 1%;
-    left: 1%;
-    right: 1%;
-
+    top: 1%; bottom: 1%; left: 1%; right: 1%;
 }
 
 .main
 {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    top: 0; bottom: 0; left: 0; right: 0;
     
     margin: auto;
 
@@ -126,82 +117,69 @@ div
 }
 
 
-.button-video
+#video-buttons > div
 {
     position: absolute;
-    height: 3.4%;
-    width: 9.2%;
+    width: 9.2%; height: 3.4%;
     background-size: 100% 100%;
     cursor: pointer;
 }
 
-.button-video::after
+#video-buttons > div::after
 {
-    content: "";
     position: absolute;
-    top: 1%;
-    bottom: 1%;
-    left: 1%;
-    right: 1%;
+    top: 1%; bottom: 1%; left: 1%; right: 1%;
 
     display: block;
 
-    -moz-transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
+    -moz-transition: all 0.10s;
+    -webkit-transition: all 0.10s;
+    transition: all 0.10s;
+
+    content: "";
 }
 
-.button-video:active::after, .button-video:hover::after
+/*#video-buttons > div:hover::after
 {
     background-color: rgba(0, 0, 0, 0.5);
+}*/
+
+#video-buttons > div:active::after
+{
+    background-color: rgba(255, 255, 255, 0.75);
 }
 
-#badimaya
+#video-buttons > div#badimaya
 {
-    top: 71%;
-    left: 44%;
-    background-image: url(../images/badimaya.png);
+    top: 71%; left: 44%;
 }
 
-#malgana
+#video-buttons > div#malgana
 {
-    top: 45%;
-    left: 14%;
-    background-image: url(../images/malgana.png);
+    top: 45%; left: 14%;
 }
 
-#ngarlawangga
+#video-buttons > div#ngarlawangga
 {
-    top: 12.5%;
-    left: 63%;
-    background-image: url(../images/ngarlawangga.png);
-    width: 9.8%;
+    top: 12.5%; left: 64%;
 }
 
-#nhanda
+#video-buttons > div#nhanda
 {
-    top: 52%;
-    left: 12.5%;
-    background-image: url(../images/nhanda.png);
+    top: 52%; left: 12.5%;
 }
 
-#wajarri
+#video-buttons > div#wajarri
 {
-    top: 44%;
-    left: 34%;
-    background-image: url(../images/wajarri.png);
+    top: 44%; left: 34%;
 }
 
-#warriyangka
+#video-buttons > div#warriyangka
 {
-    top: 13.5%;
-    left: 33%;
-    background-image: url(../images/warriyangka.png);
+    top: 13.5%; left: 33%;
 }
 
-#yingkarta
+#video-buttons > div#yingkarta
 {
-    top: 20.5%;
-    left: 22%;
-    background-image: url(../images/yingkarta.png);
+    top: 20.5%; left: 22%;
 }
