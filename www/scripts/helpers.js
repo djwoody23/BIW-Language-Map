@@ -160,7 +160,7 @@ onReadyEvent(function()
             {
                 document.addEventListener("backbutton", stopVideo, false);
             }
-            else
+            //else
             {
                 this.video.addEventListener("click", stopVideo);
             }

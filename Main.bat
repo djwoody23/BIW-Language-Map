@@ -1,6 +1,5 @@
 @ECHO OFF
 CALL "%~d0\Libs\Setup.bat" > NUL
-::SETLOCAL ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
 
 SET CURRENT_FILE=%0
 SET CURRENT_DRIVE=%~d0
@@ -12,6 +11,7 @@ TITLE PhoneGap Helper
 :START
 CALL :INIT
 CALL :MAINMENU_INIT
+CLS
 GOTO :MAINMENU
 
 
@@ -175,7 +175,7 @@ FOR /F "delims=" %%A IN ('sed -n -e "/^\s*<name>/s/^\s*<name>\s*\([^<]*\)\s*<\/n
 	CALL :UPDATE_NAME
 )
 
-CHOICE /C NY /N /T 5 /D N /M "Release Mode (Y/N): "
+CHOICE /C NY /N /T 5 /D N /M "Release Mode    (Y/N): "
 SET _B_DEB=%ERRORLEVEL%
 
 CHOICE /C YN /N /T 5 /D N /M "Build Resources (Y/N): "
@@ -189,7 +189,6 @@ ECHO.
 IF %_B_RES%==1 ( CALL :BUILDRES )
 
 CALL :UNSET "_B_RES _B_DEB"
-CLS
 GOTO :EOF
 
 
@@ -372,6 +371,15 @@ CALL cordova-gen
 GOTO :EOF
 
 
+:INITPLUGINS
+IF EXIST "plugins\" ( RD /S /Q "plugins\" )
+SETLOCAL
+SET PATTERN="/^\s*<gap:plugin /s/.*name=['""]\([^'""]*\)['""].*$/\1/gp"
+FOR /F %%A IN ('sed -n -e %PATTERN% config.xml') DO ECHO DOWNLOADING: %%A & CALL phonegap plugin add %%A > NUL
+ENDLOCAL
+GOTO :EOF
+
+
 :INITPLATFORM
 ECHO INITIALIZE PLATFORM
 ECHO.
@@ -382,19 +390,16 @@ IF "%CD%"=="%ANDROID_HOME%" (
 )
 
 IF EXIST "platforms\" ( RD /S /Q "platforms\" )
-IF EXIST "plugins\" ( RD /S /Q "plugins\" )
-
-SETLOCAL
-SET PATTERN="/^\s*<gap:plugin /s/.*name=['""]\([^'""]*\)['""].*$/\1/gp"
-FOR /F %%A IN ('sed -n -e %PATTERN% config.xml') DO ECHO DOWNLOADING: %%A & CALL phonegap plugin add %%A > NUL
-ENDLOCAL
 
 ECHO.
 ECHO ADDING ANDROID PLATFORM
 ECHO.
 CALL phonegap platform add android
+CALL :INITPLUGINS
 
 GOTO :EOF
+
+
 
 :SERVEAPK
 ECHO SERVING APK

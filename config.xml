@@ -29,10 +29,6 @@
     <preference name="disable-cursor" value="true" />
     <preference name="android-minSdkVersion" value="10" />
     <preference name="android-installLocation" value="auto" />
-    
-    <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="StatusBarBackgroundColor" value="#000000" />
-    <preference name="StatusBarStyle" value="lightcontent" />
 
     <preference name="SplashScreen" value="splash" />
     <preference name="SplashScreenDelay" value="5000" />
@@ -41,10 +37,11 @@
     
     <gap:plugin name="org.apache.cordova.device" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
-    <gap:plugin name="org.apache.cordova.statusbar" />
-    <gap:plugin name="com.moust.cordova.videoplayer" />
+    <!--gap:plugin name="com.moust.cordova.videoplayer" /-->
+    <gap:plugin name="https://github.com/jwilding/cordova-plugin-videoplayer" />
     
     <icon gap:role="default" src="res/icon.png" />
+    
     <icon density="ldpi" gap:platform="android" gap:qualifier="ldpi" platform="android" src="res/android/icon/ldpi-icon.png" />
     <icon density="mdpi" gap:platform="android" gap:qualifier="mdpi" platform="android" src="res/android/icon/mdpi-icon.png" />
     <icon density="hdpi" gap:platform="android" gap:qualifier="hdpi" platform="android" src="res/android/icon/hdpi-icon.png" />
